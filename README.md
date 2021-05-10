@@ -1,5 +1,61 @@
 # 김태현 [201740113]
 ## [5월4일]
+> 생성자함수-객체를 만드는 함수,대문자로 시작하는 이름 사용<br>
+> 프로토타입-생성자 함수로 만든 객체는 프로토타입 공간에 메소드를 지정하새 모든 객체가 공유하도록 함, 해당 함수를 생성자 함수로 사용했을때만 의미가 있음<br>
+//생성자 함수<br>
+function Product(name,price){<br>
+    this.name=name;<br>
+    this.price=price;<br>
+}<br>
+//프로토타입에 메소드 선언<br>
+Product.prototype.print=function(){<br>
+    console.log(`${this.name}의 가격은 ${this.price}원입니다.`);<br>
+};<br>
+//상품 목록 선언<br>
+let product=[<br>
+    new Product('바나나',1200),<br>
+    new Product('사과',2000),<br>
+    new Product('배',3000),<br>
+    .<br>
+    .<br>
+    .<br>
+];<br>
+//반복 출력<br>
+for(let product of products){<br>
+    product.print();<br>
+}<br><br>
+
+바나나의 가격은 1200원입니다.<br>
+사과의 가격은 2000원입니다.<br>
+배의 가격은 3000원입니다.<br>
+.<br>
+.<br>
+.<br><br>
+
+>null<br>
+console.log(null);<br>
+console.log(typeof(null));<br>
+-아예 값이 없는 상태-null 활용<br>
+//변수 선언<br>
+let zeroNumber=0;<br>
+let falseBoolean='';<br>
+let emptyString='';<br>
+let undefinedValue;<br>
+let nullValue=null;<br>
+//갑이 있는지 확인<br>
+if(zeroNumber==null)<br>
+    console.log('0은 존재하지 않는 값입니다');<br>
+if(falseBoolean==null)<br>
+    console.log('false는 존재하지 않는 값입니다');<br>
+if(emptyString==null)<br>
+    console.log('반 문자열은 존재하지 않는 값입니다');<br>
+if(undefinedValue==null)<br>
+    console.log('undefinedValue는 존재하지 않는 값입니다');<br>
+if(nullValue==null)<br>
+    console.log('null은 존재하지 않는 값입니다');<br>
+//출력<br>
+undefined는 존재하지 않는 값입니다<br>
+null은 존재하지 않는 값입니다<br><br><br><br>
 
 
 
