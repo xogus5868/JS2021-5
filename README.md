@@ -1,4 +1,40 @@
 # 김태현 [201740113]
+## [5월11일]
+>TypeError기본 예외 처리<br><br>
+예외 상황확인:undefined 자료형을 일반적인 객체 또는 함수처럼 다루면 TypeError예외 발생.<br>
+//함수 선언<br>
+function callThreeTimes(callback){<br>
+    for(let i=0;i<3;i++){<br>
+        callback();<br>
+    }<br>
+}<br>
+//정상<br>
+callThreeTimes(function(){console.log('안녕하세요');<br>
+//예외<br>
+callThreeTimes();<br><br>
+
+>기본예외처리:사전에 해당 데이터가 undefined인지 조건문 확인<br><br>
+-try catch finally구문<br>
+try{<br>
+    //예외가 발생하면<br>
+}catch(exception){<br>
+    //여기서 처리<br>
+}finally{<br>
+    //여기는 무조건 실행<br>
+}<br>
+-catch구문,finally구문 생략 가능<br>
+try{<br>
+    //예외가 발생하면<br>
+}catch(exception){<br>
+    //여기서 처리<br>
+}<br><br>
+try{<br>
+    //예외가 발생<br>
+}finally{<br>
+    //무조건 실행<br>
+}<br>
+
+
 ## [5월4일]
 > 생성자함수-객체를 만드는 함수,대문자로 시작하는 이름 사용<br>
 > 프로토타입-생성자 함수로 만든 객체는 프로토타입 공간에 메소드를 지정하새 모든 객체가 공유하도록 함, 해당 함수를 생성자 함수로 사용했을때만 의미가 있음<br>
@@ -41,7 +77,9 @@ let zeroNumber=0;<br>
 let falseBoolean='';<br>
 let emptyString='';<br>
 let undefinedValue;<br>
-let nullValue=null;<br>
+let nullValue=null;<br>.
+0
+
 //갑이 있는지 확인<br>
 if(zeroNumber==null)<br>
     console.log('0은 존재하지 않는 값입니다');<br>
