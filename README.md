@@ -1,4 +1,55 @@
 # 김태현 [201740113]
+
+## [5월25일]
+>요청과 응답<br>
+express 모듈 메서드<br>
+express()서버 어플 객체 생성<br>
+app.use()요청이 왔을때 실행할 함수 지정<br>
+app.listen()서버 실행<br><br>
+//모듈 추출<br>
+const express=require('express');<br>
+//서버 생성<br>
+const app=express();<br>
+//request이벤트 리스너 설정<br>
+app.use((request,response)=>{<br>
+    response.send('<h1>Hello express</h1>');<br>
+});<br>
+//서버 실행<br>
+app.listen(52273,()=>{<br>
+    console.log('Server running at http://127.0.0.1:52273');<br>
+});
+
+<br><br>
+>페이지 라우팅<br>
+get(path.callback)Get 요청 발생 이벤트 리스너 지정<br>
+post'',put'',delete'',add''(모든 요청 발생 이벤트 리스너 지정)<br>
+':<토큰 이름>'형태로 설정,토큰은 다른 문자열로 변환 입력 가능,request 객체 params 속성으로 전달<br><br>
+
+>response 객체<br>
+send() 데이터 본문 제공<br>
+status()상태 코드 제공<br>
+set() 헤더 설정<br><br>
+
+>content-Type<br>
+서버가''제공:웹 브라우저 헤더 확인,제공된 데이터의 형태 확인(MIME라는 문자열로 제공)<br>
+text/plain:기본적인 텍스트, text/html:html 데이터 의미<br>
+image/png:png 데이터 의미, audio/mpe:MP3 음악 파일 의미<br>
+video/mpeg: MPEG 비디오 파일 의미, application/json:json데이터 의미, multupart/form-data:입력양식 데이터
+<br><br>
+
+//request 이벤트 리스너 설정<br>
+app.get('/image',(request,response)=>{<br>
+    fs.readFile('image.png',(error,data)=>{<br>
+        //이미지 파일 제공<br>
+        response.type('image/png');<br>
+        response.send(data);<br>
+    });<br>
+});<br>
+//서버 실행<br>
+app.listen(52273,()=>{<br>
+    console.log('Server running at http://127.0.0.1:52273');<br>
+});<br>
+
 ## [5월11일]
 >TypeError기본 예외 처리<br><br>
 예외 상황확인:undefined 자료형을 일반적인 객체 또는 함수처럼 다루면 TypeError예외 발생.<br>
