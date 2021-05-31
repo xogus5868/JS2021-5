@@ -48,7 +48,20 @@ app.get('/image',(request,response)=>{<br>
 //서버 실행<br>
 app.listen(52273,()=>{<br>
     console.log('Server running at http://127.0.0.1:52273');<br>
-});<br>
+});<br><br>
+
+>HTTP 상태코드:404 Not Found<br>
+상태코드:서버가 클라이언트에 '해당 경로는 이러한 상태'라고 알려 주는 용도<br>
+1XX:처리중->100 continue<br>
+2XX:성공->200 OK<br>
+3XX:리다이렉트->300 Multiple Choices<br>
+4XX:클라이언트 오류->400 Bad Request<br>
+5XX:서버오류->500 Internal Server Error<br>
+상태코드 지정-> status()<br><br>
+
+>미들웨어<br>
+-정적 파일 제공:웹 페이지에서 변경되지 않는 요소(이미지,음악,자바스크립트 파일,스타일시트 파일 등)를쉽게 제공<br>
+미들웨어 메소드:use()<br><br>
 
 ## [5월11일]
 >TypeError기본 예외 처리<br><br>
